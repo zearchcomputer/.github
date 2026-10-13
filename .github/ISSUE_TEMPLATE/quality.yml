@@ -1,0 +1,61 @@
+name: Quality report
+description: An answer cited the wrong source, or said something its sources don't support.
+title: "[Quality] "
+labels: ["type/quality", "area/jev"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        These reports are how we find where checking falls short. A short, exact report helps most.
+        Only include what you're comfortable making public. Don't paste private notes or documents.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong
+      options:
+        - The cited source doesn't say what the paragraph says
+        - The citation points to the wrong source
+        - A better primary source existed and wasn't used
+        - The answer withheld when the sources were enough
+        - The sources disagree and the answer didn't say so
+        - The source is out of date
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: The paragraph or claim
+      description: Paste the sentence that's wrong, with its citation number.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: The cited source URL
+  - type: textarea
+    id: correct
+    attributes:
+      label: What the source actually says, or a better source
+      description: A link and the relevant sentence is enough.
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Search
+        - Deep research
+        - Compare
+        - Read a page
+        - Read a site
+        - Reverse engineer
+  - type: input
+    id: run
+    attributes:
+      label: Run ID or answer link (optional)
