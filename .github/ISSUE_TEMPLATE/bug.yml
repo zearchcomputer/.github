@@ -1,0 +1,63 @@
+name: Bug
+description: Something in Zearch doesn't work the way it should.
+labels: ["type/bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. If the problem is that an answer cited the wrong source or said something its sources don't support, use the **Quality report** form instead.
+        Never paste API keys, session cookies or private notes into an issue.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, and what you saw.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Choose Deep research
+        3. Ask …
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - App (zearch-computer.vercel.app)
+        - API (/v1)
+        - Local development
+        - Railway worker (discovery or reverse)
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      options:
+        - Search
+        - Deep research
+        - Compare
+        - Read a page
+        - Read a site
+        - Reverse engineer
+        - Not mode-specific
+  - type: input
+    id: run
+    attributes:
+      label: Run ID or answer link (optional)
+      description: Only if you are comfortable sharing it.
+  - type: input
+    id: env
+    attributes:
+      label: Browser and device
+      placeholder: Safari 19 on iPhone, Chrome 141 on macOS …
